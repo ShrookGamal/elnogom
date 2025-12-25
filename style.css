@@ -5,7 +5,10 @@
     --white: #ffffff;
     --transition: all 0.4s ease;
 }
-
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* نفس ارتفاع الهيدر تقريباً */
+}
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
 body { background: #f4f7f6; overflow-x: hidden; scroll-behavior: smooth; }
 
@@ -1366,3 +1369,18 @@ section {
 .mobile-sidebar.open .mobile-link:nth-child(4) { transition-delay: 0.4s; }
 .mobile-sidebar.open .mobile-link:nth-child(5) { transition-delay: 0.5s; }
 .mobile-sidebar.open .mobile-link:nth-child(6) { transition-delay: 0.6s; }
+@media (max-width: 768px) {
+    .nav-actions .nav-call-btn {
+        padding: 5px 10px;
+        max-width: 130px; /* تحديد عرض الزر */
+    }
+    .call-text strong {
+        font-size: 12px; /* تصغير الرقم */
+    }
+    .call-text span {
+        display: none; /* إخفاء كلمة "اتصل الآن" لتوفير مساحة */
+    }
+    .logo-box .brand-name {
+        font-size: 20px; /* تصغير اللوجو قليلاً */
+    }
+}
