@@ -1537,3 +1537,51 @@ section {
         border-radius: 2px;
     }
 }
+/* إصلاحات نهائية للموبايل لضمان ظهور المنيو */
+@media (max-width: 992px) {
+    /* ضمان ظهور الحاوية التي تضم زر المنيو */
+    .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    /* استايل زر الهامبرجر (الثلاث شرط) */
+    .hamburger {
+        display: flex !important; /* إجبار الظهور */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 22px;
+        cursor: pointer;
+        z-index: 10005 !important;
+        margin-right: 10px;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background: white; /* تأكدي أن لونه أبيض ليظهر فوق الأزرق */
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    /* السايد منيو - التأكد من الـ z-index */
+    .mobile-sidebar {
+        z-index: 100000 !important; /* أعلى رقم ممكن لضمان الظهور فوق الكل */
+    }
+    
+    /* تصغير زر الاتصال في الهيدر ليعطي مساحة للهامبرجر */
+    .nav-call-btn {
+        padding: 5px 10px !important;
+        max-width: 140px;
+    }
+    .call-text strong {
+        font-size: 12px !important;
+    }
+}
+
+/* حل مشكلة الإزاحة لليسار في السكاشن */
+.about-content, .about-image-box, .contact-info-side, .quote-form-side {
+    min-width: 0 !important; /* إلغاء الـ 400 بكسل التي تسبب الخروج عن الشاشة */
+}
