@@ -1369,18 +1369,147 @@ section {
 .mobile-sidebar.open .mobile-link:nth-child(4) { transition-delay: 0.4s; }
 .mobile-sidebar.open .mobile-link:nth-child(5) { transition-delay: 0.5s; }
 .mobile-sidebar.open .mobile-link:nth-child(6) { transition-delay: 0.6s; }
+/* ============================================================
+   تعديلات الميديا كويري لإصلاح مشاكل الموبايل (نظام النجوم)
+   ============================================================ */
+
 @media (max-width: 768px) {
-    .nav-actions .nav-call-btn {
-        padding: 5px 10px;
-        max-width: 130px; /* تحديد عرض الزر */
+    /* 1. إصلاح الهيدر واللوجو وزر الاتصال */
+    .nav-container {
+        width: 95% !important;
+    }
+    .logo-visual {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    .main-star-icon {
+        font-size: 22px !important;
+    }
+    .logo-truck-anim {
+        font-size: 16px !important;
+    }
+    .brand-name {
+        font-size: 18px !important;
+    }
+    .brand-sub {
+        font-size: 9px !important;
+    }
+    .nav-call-btn {
+        padding: 5px 10px !important;
+        gap: 5px !important;
+    }
+    .icon-circle {
+        width: 25px !important;
+        height: 25px !important;
     }
     .call-text strong {
-        font-size: 12px; /* تصغير الرقم */
+        font-size: 11px !important;
     }
-    .call-text span {
-        display: none; /* إخفاء كلمة "اتصل الآن" لتوفير مساحة */
+    .hamburger {
+        display: block !important; /* ضمان ظهور زر المنيو */
+        margin-right: 10px;
     }
-    .logo-box .brand-name {
-        font-size: 20px; /* تصغير اللوجو قليلاً */
+
+    /* 2. إصلاح السايد منيو (الموبايل سكرين) */
+    .mobile-sidebar {
+        width: 280px !important;
+        z-index: 10001 !important; /* لضمان ظهورها فوق كل شيء */
+    }
+
+    /* 3. إصلاح أزرار الهيرو (الرئيسية) */
+    .main-title {
+        font-size: 2.2rem !important; /* تصغير العنوان ليناسب الشاشة */
+        padding: 0 10px;
+    }
+    .hero-desc {
+        font-size: 1rem !important;
+        padding: 0 15px;
+    }
+    .hero-btns {
+        flex-direction: column !important; /* جعل الأزرار تحت بعضها */
+        gap: 15px !important;
+        align-items: center;
+    }
+    .btn {
+        width: 85% !important; /* تكبير العرض ليناسب الموبايل */
+        margin: 0 !important;
+        padding: 12px 20px !important;
+        font-size: 16px !important;
+    }
+    .btn-secondary {
+        margin-right: 0 !important;
+    }
+
+    /* 4. إصلاح سكشن من نحن (حل مشكلة الإزاحة لليسار) */
+    .about-section {
+        padding: 60px 0 !important;
+    }
+    .about-wrapper {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 30px !important;
+    }
+    .about-content, .about-image-box {
+        min-width: 100% !important; /* إلغاء الـ 400px التي تسبب الخروج عن الشاشة */
+        width: 100% !important;
+    }
+    .extra-text {
+        border-right: none !important;
+        border-bottom: 4px solid var(--gold);
+        padding: 0 0 15px 0 !important;
+    }
+    .experience-badge {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        bottom: -20px !important;
+    }
+
+    /* 5. إصلاح سكشن تواصل معنا (حل مشكلة الإزاحة لليسار) */
+    .contact-wrapper {
+        flex-direction: column !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    .contact-info-side, .quote-form-side {
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+    .detail-item {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    .quote-card {
+        padding: 30px 15px !important;
+    }
+    .form-row {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* 6. إصلاح الأزرار العائمة وتداخلها */
+    .floating-contact-wrap {
+        left: 15px !important; /* تأكيد مكانها في اليسار بعيداً عن الكلام */
+        bottom: 15px !important;
+    }
+    .float-btn {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+    }
+
+    /* 7. سكشن لماذا نحن (إصلاح الجريد) */
+    .why-us-cards-grid {
+        grid-template-columns: 1fr !important; /* كارد واحد في السطر */
+        width: 100% !important;
+    }
+}
+
+/* تعديل إضافي للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.8rem !important;
+    }
+    .brand-name {
+        display: none; /* إخفاء اسم الشركة والاكتفاء باللوجو لتوفير مساحة في الهيدر */
     }
 }
