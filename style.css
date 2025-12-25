@@ -1532,28 +1532,20 @@ section {
     .call-text strong {
         font-size: 12px !important;
     }
+    .hero-btns {
+    display: flex !important;
+    flex-direction: column !important; /* عشان يجوا تحت بعض */
+    gap: 20px !important;            /* دي اللي بتعمل المسافة اللي إنتي عايزاها بين الزرين */
+    align-items: center !important;
+    margin-top: 30px !important;
+}
+
+.btn-secondary {
+    margin-right: 0 !important;      /* بنلغي المسافة الجانبية اللي كانت موجودة في نسخة اللابتوب */
+}
+
 }
 .about-content, .about-image-box, .contact-info-side, .quote-form-side {
     min-width: 0 !important; 
      
-}
-@media (max-width: 992px) {
-    /* ... الأكواد السابقة ... */
-
-    .hero-btns {
-        display: flex !important;
-        flex-direction: column !important; /* جعل الأزرار فوق بعضها */
-        gap: 20px !important; /* هذا السطر هو الذي يحل المشكلة ويضع مسافة 20 بكسل بين الزرين */
-        align-items: center !important;
-        margin-top: 30px !important;
-    }
-
-    .btn {
-        width: 85% !important; /* جعل الأزرار بعرض الشاشة تقريباً لتكون أسهل في الضغط */
-        margin: 0 !important; /* حذف أي هوامش قديمة تسبب مشاكل */
-    }
-
-    .btn-secondary {
-        margin-right: 0 !important; /* إلغاء الهامش الجانبي الذي كان موجوداً في نسخة اللاب توب */
-    }
 }
